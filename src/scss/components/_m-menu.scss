@@ -1,0 +1,131 @@
+.mobile-menu {
+  background-color: #313744;
+  position: fixed;
+  z-index: 99999999999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  padding: rem(20);
+  flex-direction: column;
+  justify-content: space-between;
+  top: -100%;
+  transition: $tr;
+  display: none;
+
+  @include md {
+    display: flex;
+  }
+
+  &.--open {
+    top: 0;
+  }
+
+  &__close {
+    width: rem(20);
+    height: rem(20);
+    position: absolute;
+    right: rem(15);
+    top: rem(20);
+    cursor: pointer;
+
+    span {
+      height: rem(2);
+      width: rem(20);
+      position: absolute;
+      background-color: $wc;
+
+      &:first-child {
+        transform-origin: left;
+        transform: rotate(45deg);
+        left: rem(6);
+      }
+
+      &:last-child {
+        transform-origin: right;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+
+  &__logo {
+    max-width: rem(200);
+    width: 100%;
+    margin-bottom: rem(40);
+  }
+
+  &__nav {
+    ul {
+      li {
+        margin-bottom: rem(10);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $wc;
+          font-weight: 700;
+          font-size: rem(20);
+
+          &:hover {
+            color: #80c2fa;
+          }
+
+        }
+      }
+    }
+  }
+
+  &__block {
+    margin-bottom: rem(20);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__phone {
+    color: $wc;
+    margin-bottom: rem(30);
+    display: block;
+
+    &:hover {
+      color: #80c2fa;
+    }
+
+    i.fas.fa-phone {
+      color: $wc;
+      transform: rotate(90deg);
+      margin-right: rem(10);
+    }
+  }
+
+  &__social {
+    ul {
+      li {
+        width: rem(40);
+        height: rem(40);
+        display: inline-block;
+
+        a {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $gc;
+
+          &:hover {
+            background-color: #80c2fa;
+          }
+
+          i {
+            color: $wc;
+          }
+        }
+      }
+    }
+  }
+}

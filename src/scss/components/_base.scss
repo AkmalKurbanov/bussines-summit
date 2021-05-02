@@ -1,13 +1,20 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight: 500;
+  color: $bc;
+  box-sizing: border-box;
 }
 
 html,
 body {
   height: 100%;
   position: relative;
-  // font-family: $helvetica;
+  font-family: $mt;
+}
+
+.scroll-disabled {
+  overflow: hidden;
 }
 
 a {
@@ -36,6 +43,31 @@ button {
   background: transparent;
 }
 
+p {
+  font-size: rem(20);
+  color: $gc;
+
+  @include lg {
+    font-size: rem(19);
+  }
+
+  @include md {
+    font-size: rem(18);
+  }
+
+  @include sm {
+    font-size: rem(17);
+  }
+
+  @include xs {
+    font-size: rem(16);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 // flex footer
 .wrapper {
   display: flex;
@@ -44,8 +76,18 @@ button {
 
   .content {
     flex: 1 0 auto;
+    padding: var(--headerHeight) rem(80) 0;
+
+    @include lg {
+      padding: var(--headerHeight) rem(50) 0;
+    }
+
+    @include md {
+      padding: var(--headerHeight) 0 0;
+    }
   }
 }
+
 // flex footer end
 
 // container
@@ -78,3 +120,334 @@ button {
 
 
 // container end
+
+// btn start
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: rem(255);
+  width: 100%;
+  min-height: rem(60);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: $wc;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: $tr;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #80c2fa;
+  }
+}
+
+// btn end
+
+
+
+// title start
+.title {
+  margin-bottom: rem(40);
+
+  @include lg {
+    margin-bottom: rem(35);
+  }
+
+  @include md {
+    margin-bottom: rem(30);
+  }
+
+  @include sm {
+    margin-bottom: rem(25);
+  }
+
+  @include xs {
+    margin-bottom: rem(20);
+  }
+
+  &__subtitle {
+    padding-left: rem(90);
+    text-transform: uppercase;
+    font-size: rem(15);
+    position: relative;
+    font-weight: 700;
+    color: $mc;
+    margin-bottom: rem(45);
+
+    @include lg {
+      margin-bottom: rem(40);
+      padding-left: rem(70);
+    }
+
+    @include md {
+      margin-bottom: rem(35);
+      padding-left: rem(60);
+    }
+
+    @include sm {
+      margin-bottom: rem(30);
+      padding-left: rem(50);
+    }
+
+    @include xs {
+      margin-bottom: rem(25);
+      padding-left: rem(40);
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(50);
+      height: rem(2);
+      background-color: $mc;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+
+      @include lg {
+        width: rem(45);
+      }
+      @include md {
+        width: rem(40);
+      }
+      @include sm {
+        width: rem(35);
+      }
+      @include xs {
+        width: rem(30);
+      }
+    }
+  }
+
+  h2 {
+    font-size: rem(60);
+    font-weight: 700;
+
+    @include lg {
+      font-size: rem(50);
+    }
+
+    @include md {
+      font-size: rem(40);
+    }
+
+    @include sm {
+      font-size: rem(30);
+    }
+
+    @include xs {
+      font-size: rem(20);
+    }
+  }
+}
+
+// title end
+
+// distance start
+.distance {
+  padding: rem(120) 0;
+
+  @include lg {
+    padding: rem(100) 0;
+  }
+
+  @include md {
+    padding: rem(80) 0;
+  }
+
+  @include sm {
+    padding: rem(60) 0;
+  }
+
+  @include xs {
+    padding: rem(40) 0;
+  }
+}
+
+// distance end
+
+
+.text-section,
+.social-section {
+  position: fixed;
+  width: rem(80);
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  writing-mode: tb-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: $wc;
+
+  @include lg {
+    width: rem(50);
+  }
+
+  @include md {
+    display: none;
+  }
+
+  * {
+    transform: rotate(-180deg);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.text-section {
+  left: 0;
+
+  p {
+    @include lg {
+      font-size: rem(15);
+      font-weight: 700;
+    }
+  }
+}
+
+.social-section {
+  right: 0;
+
+
+  * {
+    transform: rotate(0);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  li {
+    border-bottom: rem(1) solid $sc;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  a {
+    padding: rem(10) 0;
+
+    @include lg {
+      font-size: rem(13);
+    }
+
+    &:hover {
+      color: $mc;
+    }
+  }
+
+  .scroll-top {
+    width: rem(47);
+    height: rem(47);
+    position: absolute;
+    bottom: -100%;
+    transition: $tr;
+
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #81c2fa;
+
+      i {
+        color: $wc;
+      }
+    }
+
+    &.scroll {
+      bottom: rem(20);
+    }
+  }
+}
+
+
+// modal window start
+.modal-window-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($bc, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -9999999999999;
+  transition: $tr;
+
+  &.--open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999999999999;
+  }
+
+  .modal-window {
+    position: relative;
+    max-width: rem(400);
+    padding: rem(15);
+    background: linear-gradient(135deg, #5e4ac5 0%, #5e4ac5 20%, rgb(122, 81, 205) 82%, rgb(122, 81, 205) 100%);
+
+    &__close {
+      position: absolute;
+      top: rem(25);
+      right: rem(25);
+      width: rem(20);
+      height: rem(20);
+      cursor: pointer;
+
+      &:hover {
+        span {
+          background-color: #5399d6;
+        }
+      }
+
+      span {
+        width: rem(20);
+        height: rem(2);
+        background-color: $mc;
+        display: block;
+        position: absolute;
+        top: 0;
+        transform: $tr;
+
+        &:first-child {
+          transform-origin: left;
+          transform: rotate(45deg);
+          left: rem(6);
+        }
+
+        &:last-child {
+          transform-origin: right;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .modal-window-block {
+    background-color: $sc;
+    padding: rem(20);
+    text-align: center;
+
+    &__title {
+      color: $mc;
+      font-size: rem(25);
+    }
+
+    &__subtitle {
+      color: #5399d6;
+      font-size: rem(20);
+      margin-top: rem(20);
+    }
+  }
+}
+
+// modal window end

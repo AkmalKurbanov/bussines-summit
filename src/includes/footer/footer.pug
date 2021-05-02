@@ -1,1 +1,37 @@
-div 2
+footer.footer.wow.fadeInDown(data-wow-delay=".5s")
+  .container
+    .footer__top
+      .footer__wrap 
+        .footer__logo 
+          a(href="#")
+            img(src="assets/img/logo.png", alt="")
+        .footer__links 
+          ul
+            mixin link(href,item)
+              li
+                a(href=href)=item   
+            +link('#','Обзор')
+            +link('#','Видение')
+            +link('#','Возможность')
+            +link('#','Цель')
+          ul 
+            +link('#','Миссия')
+            +link('#','Польза')
+            +link('#','Направления')
+            +link('#','Контакты')
+
+      .footer__btn
+        a(href="tel:81002344567").phone
+          i.fas.fa-phone
+          |8-100-234-45-67     
+    .footer__bottom 
+      .footer__copyright
+        p &copy; International business summit
+      .footer__social 
+        ul  
+          mixin social(icon)
+            li 
+              a(href="#")
+                i(class=icon)
+          +social('fab fa-facebook-f')       
+          +social('fab fa-instagram')       

@@ -5,7 +5,7 @@ const rename = require('gulp-rename'); // добавляет префикс min 
 const autoprefixer = require('gulp-autoprefixer'); // добавляет префиксы -webkit-: -moz-: -ms-:
 const cssmin = require('gulp-clean-css'); // минифицирует сss файлы
 const sourcemaps = require('gulp-sourcemaps'); // создает карты источника идентификации для файла
-const webpcss = require('gulp-webpcss'); // преобразует картинки в webp формат в стилях
+// const webpcss = require('gulp-webpcss'); // преобразует картинки в webp формат в стилях
 const browsersync = require('browser-sync'); // живая перезагрузка страницы
 
 

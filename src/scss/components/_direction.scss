@@ -1,0 +1,175 @@
+.direction {
+  margin-bottom: rem(85);
+
+  @include lg {
+    margin-bottom: rem(65);
+  }
+
+  @include md {
+    margin-bottom: rem(45);
+  }
+
+  @include sm {
+    margin-bottom: rem(25);
+  }
+
+  @include xs {
+    margin-bottom: rem(5);
+  }
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex-basis: 32%;
+    min-height: rem(440);
+    background-size: cover;
+    background-position: left center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(35);
+    overflow: hidden;
+
+    @media screen and (max-width: 1450px) {
+      min-height: rem(350);
+    }
+
+    @media screen and (max-width: 1400px) {
+      min-height: rem(330);
+    }
+
+    @include lg {
+      flex-basis: 49%;
+    }
+
+    @include md {
+      min-height: rem(300);
+    }
+
+    @include xs {
+      flex-basis: 100%;
+      min-height: rem(270);
+    }
+
+    &:hover {
+      &:before {
+        background-color: rgba($bc, .7);
+      }
+
+      .direction__title {
+        transform: translateY(-30px);
+        color: #80C2FA;
+      }
+
+      .direction__desc {
+        opacity: 1;
+        position: relative;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba($bc, .5);
+      transition: $tr;
+    }
+
+    &:last-child {
+      flex-basis: 66%;
+
+      @include lg {
+        flex-basis: 100%;
+      }
+
+      @include xs {
+        min-height: rem(400);
+      }
+    }
+  }
+
+  &__desc-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $wc;
+    font-size: rem(30);
+    font-weight: 700;
+    text-align: center;
+    transition: $tr;
+
+    @media screen and (max-width: 1450px) {
+      font-size: rem(25);
+    }
+
+    @include lg {
+      font-size: rem(20);
+    }
+  }
+
+  &__desc {
+    opacity: 0;
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: 1400px) {
+      width: 80%;
+    }
+
+    @include md {
+      width: 90%;
+    }
+
+    @include sm {
+      width: 100%;
+    }
+
+    p {
+      color: $wc;
+      text-align: center;
+      font-size: rem(15);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: normal;
+
+      @media screen and (max-width: 1450px) {
+        font-size: rem(11);
+        font-weight: 400;
+      }
+
+      @include lg {
+        font-size: rem(12);
+      }
+
+      @include md {
+        font-size: rem(11);
+      }
+
+      @include sm {
+        font-size: rem(10);
+      }
+
+      @include xs {
+        margin-bottom: 5px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

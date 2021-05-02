@@ -3,13 +3,287 @@ block title
   | main
 block main
   .wrapper
-    .content
-      include includes/header/header
- 
+    .mobile-menu
+      .mobile-menu__close 
+        span
+        span
+      .mobile-menu__block
+        .mobile-menu__logo 
+          a(href="#")
+            img(src="assets/img/logo.png", alt="")  
+        .mobile-menu__nav
+          ul 
+            mixin mbMenu(href, title)
+              li
+                a(href=href)=title 
+            +mbMenu('#overview','Обзор')                
+            +mbMenu('#vision','Видение')                
+            +mbMenu('#opportunity','Возможность')                
+            +mbMenu('#goal','Цель')                
+            +mbMenu('#mission','Миссия')                
+            +mbMenu('#benefit','Польза')                
+            +mbMenu('#direction','Направления')                
+            +mbMenu('#contacs','Контакты')                
+      .mobile-menu__block
+        a(href="tel:81002344567").mobile-menu__phone
+          i.fas.fa-phone
+          |8-100-234-45-67  
+        .mobile-menu__social 
+          ul 
+            mixin social(href, icon)
+              li 
+                a(href=href) 
+                  i(class=icon)
+            +social('','fab fa-facebook-f')       
+            +social('','fab fa-instagram')        
+    include includes/header/header
+    .text-section 
+      p Большой бизнес начинается с малого
+    .social-section
+      ul 
+        mixin social(title)
+          li 
+            a(href="#")=title   
+        +social('Facebook')
+        +social('Instagram')
+      .scroll-top
+        a(href="#top")
+          i.fas.fa-angle-up   
+    .content#top
+      .hero(style="background-image: url('assets/img/hero_1.jpg')")
+        .container 
+          .hero__title-wrap.wow.fadeInDown
+            h1.hero__title МЕЖДУНАРОДНЫЙ БИЗНЕС САММИТ 
+            p 11-12-13 июня 2021 <br> г. Москва 
+            a(href="#contacs").btn Купить билеты
 
-     
+      .overview.distance#overview
+        .container
+          .overview__wrap
+            .overview__col
+              .overview__list
+                mixin overview(number,title, delay)
+                  .overview__item.wow.bounceIn(data-wow-duration="1s" data-wow-delay=delay)
+                    span=number
+                    p=title
+                +overview('1.','Что такое бизнес-саммит','.5s')    
+                +overview('2.','Цели саммита','.6s')    
+                +overview('3.','Видение саммита','.7s')    
+                +overview('4.','Миссия cаммита','.8s')    
+                +overview('5.','6 Направлений саммита','.9s')    
+            .overview__col
+              .title.wow.fadeInDown(data-wow-delay="0.7s")
+                .title__wrap
+                  .title__subtitle Обзор 
+                  h2 ОБЗОР САММИТА
+
+      .vision.distance#vision
+        .container 
+          .vision__wrap.wow.fadeInLeft(data-wow-duration=".5s" data-wow-delay=".5s")
+            .vision__block
+              .vision__col.wow.fadeInDown
+                p Создать площадку для представителей бизнеса для получение возможности налаживание деловых связей и нетворкинга.
+                p В международном бизнес-самите примут участие
+                  |более 15 стран.
+                  |Представитли мин. экономике, послы около 15 СТРАН, бизнес
+                  |ассоциации, ТПП(торговой промышленной палаты),бизнесмены,
+                  |инвесторы, доноры, франчайзер
+              .vision__col.wow.fadeInUp(data-wow-duration=".7s" data-wow-delay=".7s")
+                .title
+                  .title__wrap
+                    .title__subtitle ВИДЕНИЕ 
+                    h2 ВИДЕНИЕ САММИТА
+
+      .img-block.distance#opportunity
+        .container 
+          .img-block__wrap 
+            .img-block__col.wow.fadeInLeft
+              .img-block__img 
+                img(src="assets/img/obzor.jpg", alt="")
+            .img-block__col
+              .title
+                .title__wrap
+                  .title__subtitle.wow.fadeIn(data-wow-delay=".5s") возможности 
+                  h2.wow.fadeIn(data-wow-delay=".6s")  возможность
+              p.wow.fadeIn(data-wow-delay=".7s")  А также, предоставить возможность 
+                |представителям государства и бизнеса для
+                |дальнейшего взаимодействия в рамках
+                |развития экономики страны и внесение
+                |вклада в благоприятной бизнес среды.    
+      
+      .img-block.img-block--light.distance#goal
+        .container 
+          .img-block__wrap 
+            .img-block__col.wow.fadeInLeftBig(data-wow-delay=".5s") 
+              .img-block__img 
+                img(src="assets/img/img_2.jpg", alt="")
+            .img-block__col
+              .title
+                .title__wrap
+                  .title__subtitle.wow.fadeIn(data-wow-delay="1s")  ЦЕЛи 
+                  h2.wow.fadeIn(data-wow-delay="1.1s")  ЦЕЛЬ САММИТА
+              p.wow.fadeIn(data-wow-delay="1.2s")  Основной целью саммита является
+                |продвижение бизнес сотрудничества
+                |с другими странами   
+      
+      .img-block.img-block--reverse.distance#mission
+        .container 
+          .img-block__wrap 
+            .img-block__col.wow.fadeInRight(data-wow-duration=".5s" data-wow-delay=".5s")
+              .img-block__img 
+                img(src="assets/img/person_3.jpg", alt="")
+            .img-block__col
+              .title
+                .title__wrap
+                  .title__subtitle.wow.fadeIn(data-wow-delay=".5s") КУДА МЫ ДВИЖЕМСЯЯ 
+                  h2.wow.fadeIn(data-wow-delay=".6s") МИССИЯ
+              p.wow.fadeIn(data-wow-delay=".7s") Привлечение иностранных инвестиций
+                |для развития как
+                |частных проектов, так и проектов в сфере
+                |государственно-частного партнерства.
+                |За короткое время вывести бизнес и
+                |предпринимателей на международный
+                |рынок.
+
+      .overview.overview--modifiet.distance#benefit
+        .container
+          .overview__wrap
+            .overview__col
+              .title
+                .title__wrap
+                  .title__subtitle.wow.fadeInDown(data-wow-delay=".5s") На саммите участники могут
+              .overview__list
+                mixin overview(number,title,modifiet,delay)
+                  .overview__item.wow.flipInX(class=modifiet data-wow-delay=delay)
+                    span=number
+                    p=title
+                +overview('1.','Найти партнеров из других стран','','.3s')    
+                +overview('2.','Найти доноров и спонсоров','','.4s')    
+                +overview('3.','Перенимание из лучшиз практик','','.5s')    
+                +overview('4.','Обмен опытом','','.6s')    
+                +overview('5.','Заключить соглашение с представителями других бизнесов о взаимодействии на выгодных условиях','overview__item--modifiet','.7s')    
+                +overview('6.','Получить возможность масштабирования своего бизнеса','overview__item--modifiet','.8s')    
+            .overview__col
+              .title
+                .title__wrap
+                  .title__subtitle.wow.fadeInDown(data-wow-delay=".6s") БИЗНЕС САММИТ
+                  h2.wow.fadeInDown(data-wow-delay=".7s") ПОЛЬЗА 
+
+      .overview.overview--direction.distance#direction
+        .container
+          .title
+            .title__wrap
+              .title__subtitle.wow.fadeInDown(data-wow-delay=".5s")  направления
+              h2.wow.fadeInDown(data-wow-delay=".6s")  6 направлений бизнес-саммита
+          .overview__wrap
+            .overview__list
+              mixin overview(number,title, delay)
+                .overview__item.wow.fadeInDown(class=modifiet data-wow-delay=delay)
+                  span=number
+                  p=title
+              +overview('1.','ФОРУМ САММИТ','.3s')    
+              +overview('2.','БИЗНЕС САММИТ ВЫСТАВКА','.5s')    
+              +overview('3.','ИСЛАМСКИЙ БИЗНЕС САММИТ ВЫСТАВКА','.7s')    
+              +overview('4.','BOSWOMEN- ЖЕНСКИЙ БИЗНЕС ФОРУМ + ВЫСТАВКА','.9s')    
+              +overview('5.','ФРАНЧАЙЗИНГ САММИТ +ВЫСТАВКА,','1.1s')    
+              +overview('6.','КУЛЬТУРА И ПОКАЗ МОДЫ','1.2s')    
+
+      .direction
+        .direction__wrap
+          mixin direction(bg,title,desc,delay)
+            .direction__item.wow.fadeInDown(style="background-image: url(assets/img/"+bg+")" data-wow-delay=delay)
+              .direction__desc-wrap
+                .direction__title=title
+                .direction__desc
+                  p=desc
+
+          +direction('textil.jpg','ТЕКСТИЛЬ ЭКСПО','','.3s')
+          +direction('boswomens.jpg','BOSWOMEN ЖЕНСКИЙ БИЗНЕС ФОРУМ','','.5s')
+          +direction('McDonalds.jpg','ФРАНЧАЙЗИНГ САММИТ И ВЫСТАКА','УЧАСТВУЕТ ОКОЛО 15 СТРАН МИРА.','.7s')
+          +direction('islam.jpeg','ИСЛАМСКИЙ БИЗНЕС САММИТ + ВЫСТАВКА','','.8s')
+          
+          .direction__item.wow.fadeInDown(style="background-image: url('assets/img/busines.jpg')" data-wow-delay="1s")
+            .direction__desc-wrap
+              .direction__title БИЗНЕС ВЫСТАВКА
+              .direction__desc 
+                p ЭТО ЗНАЧИТ, ЧТО КАЖДЫЙ УЧАСТНИК ПОЛУЧАЕТ ВОЗМОЖНОСТЬ НЕ ПРОСТО СФОРМИРОВАТЬ ВЫСТАВОЧНУЮ ЭКСПОЗИЦИЮ, НО И ЗАЯВИТЬ О СВОЕМ ПРОЕКТЕ, ЖЕЛАЕМЫХ ПАРТНЕРАХ И СУЩЕСТВУЮЩИХ ПРОБЛЕМАХ НА ПУТИ РЕАЛИЗАЦИИ В РАМКАХ САММИТА СОСТАВЛЯЮЩЕЙ МЕРОПРИЯТИЯ.
+                p В МЕЖДУНАРОДНОМ БИЗНЕС-САММИТЕ ПРИМУТ УЧАСТИЕ БОЛЕЕ 15 СТРАН 
+                p ПРЕДСТАВИТЕЛИ МИН. ЭКОНОМИКИ, ПОСЛЫ ОКОЛО 15 СТРАН, БИЗНЕС АССОЦИЯЦИИ, ТПП(торговой промышленной палаты),БИЗНЕСМЕНЫ, ИНВЕСТОРЫ, ДОНОРЫ, ФРАНЧАЙЗЕРЫ.
+                p Основной экспозиционной площадкой cаммита является выставка и научнопромышленного и инновационного потенциала и больше знаний как вести бизнес
+                p Среди основных направлений выставки этого года – импорт, экспорт,инвестиции, инновации, коммерческая недвижимость, туризм, франшиза Традиционно способствует обмену опытом в научно-инновационной сфере, привлечению инвестиций, развитию межрегиональных и международных связей
+                p УНИКАЛЬНОСТЬ БИЗНЕС САММИТА СОСТОИТ В ОБЪЕДИНЕНИИ ВЫСТАВОЧНОЙ И КОНГРЕССНОЙ ЧАСТЕЙ.
+
+      .stands.distance
+        .container
+          .title
+            .title__wrap
+              .title__subtitle.wow.fadeInDown Стенды
+              h2.wow.fadeInDown Стандарьные выстовочные стенды 
+          .stands__wrap
+            mixin stand(img, title, modificate, delay) 
+              .stands__item.wow.fadeInDown(class=modificate data-wow-delay=delay)
+                a(href=img data-fancybox="gallery")
+                  img(src=img, alt="")
+                  .stands__title=title
+            +stand('assets/img/stand1.jpg','','stands__item--standart','.3s')              
+            +stand('assets/img/stand2.jpg','','stands__item--standart','.5s')              
+            +stand('assets/img/stand3.jpg','','stands__item--standart','.7s')              
+            +stand('assets/img/stand4.jpg','','stands__item--standart','.9s') 
+          .title.wow.fadeInDown
+            .title__wrap
+              .title__subtitle Комплектация стендов площадью от 40 до 60 м <sup>2</sup>
+          .stands__wrap
+            +stand('assets/img/stand5.jpg','Линейный','stands__item--area','.3s') 
+            +stand('assets/img/stand6.jpg','Угловой','stands__item--area','.5s') 
+            +stand('assets/img/stand7.jpg','Полуостров','stands__item--area','.7s') 
+          .title.wow.fadeInDown
+            .title__wrap
+              .title__subtitle Комплектация стендов площадью от 4 до 1 м <sup>2</sup>
+          .stands__wrap
+            +stand('assets/img/stand8.jpg','Линейный','stands__item--area','.3s') 
+            +stand('assets/img/stand9.jpg','Угловой','stands__item--area','.5s') 
+            +stand('assets/img/stand10.jpg','Полуостров','stands__item--area','.7s') 
+
+      .contacts.distance#contacs   
+        .container
+          .contacts__wrap
+            .contacts__block-wrap.wow.fadeInDown(data-wow-delay=".5s")
+              .contacts__block
+                .contacts__title Email
+                a(href="mailto:email@qwerty.com") email@qwerty.com
+                .contacts__title Телефон
+                a(href="tel:81002344567") 8-100-234-45-67
+            .contacts__form
+              .title
+                .title__wrap
+                  .title__subtitle.wow.fadeInDown(data-wow-delay=".7s")  Контактная форма
+                  h2.wow.fadeInDown(data-wow-delay=".9s")  Свяжитесь с нами
+              form(action="send.php" method="post")
+                .contacts__form-col
+                  <!-- Hidden Required Fields -->
+                  <input type="hidden" name="project_name" value="International business summit">
+                  <input type="hidden" name="admin_email" value="250296a@gmail.com">
+                  <input type="hidden" name="form_subject" value="Форма заявки">
+                  <!-- END Hidden Required Fields --> 
+                  input(type="text" name="Имя" placeholder="Укажите ФИО" required).wow.fadeInDown(data-wow-delay="1s")
+                  input(type="text" name="Email" placeholder="Укажите Email").wow.fadeInDown(data-wow-delay="1.2s")
+                  input(type="text" name="phone" placeholder="Укажите телефон" required).wow.fadeInDown(data-wow-delay="1.4s")
+                .contacts__form-col
+                  <textarea class="wow fadeInDown" data-wow-delay="1.6s" name="Сообщение" placeholder="Сообщение"></textarea> 
+                  button(type="submit").btn.wow.fadeInDown(data-wow-delay="1.8s") Отправить
+
+
 
     include includes/footer/footer
+
+    .modal-window-wrap
+      .modal-window
+        .modal-window__close 
+          span
+          span
+        .modal-window-block
+          .modal-window-block__title Спасибо <br> Форма успешно отправлена!
+          .modal-window-block__subtitle Наш менедежер свяжется с Вами.
 
 
   include includes/scripts 

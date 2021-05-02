@@ -1,3 +1,156 @@
 .footer {
   flex: 0 0 auto;
+  background-color: #2d3441;
+  padding: rem(50) rem(80);
+
+  @include md {
+    padding: rem(50);
+  }
+
+  @include xs {
+    padding: rem(50) 0;
+  }
+
+  &__top {
+    margin-bottom: rem(40);
+    display: flex;
+    justify-content: space-between;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+
+    @include lg {
+      width: 50%;
+    }
+
+    @include sm {
+      flex-direction: column;
+      width: auto;
+    }
+  }
+
+  &__btn {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include sm {
+      width: 100%;
+      align-items: flex-start;
+      margin-top: rem(30);
+    }
+
+    .phone {
+      color: $wc;
+
+      &:hover {
+        color: #81c2fa;
+      }
+    }
+
+    i.fas.fa-phone {
+      transform: rotate(90deg);
+      margin-right: rem(10);
+      color: $wc;
+    }
+  }
+
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include xs {
+      align-items: flex-start;
+      flex-direction: column-reverse;
+    }
+  }
+
+
+  &__logo {
+    min-width: rem(200);
+    margin-right: rem(150);
+
+    @include lg {
+      margin-right: rem(80);
+    }
+
+    @include md {
+      margin-right: rem(40);
+    }
+
+    @include sm {
+      margin-right: 0;
+      margin-bottom: rem(30);
+      max-width: rem(200);
+    }
+  }
+
+  &__links {
+    ul {
+      column-count: 2;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          font-size: rem(20);
+          color: $wc;
+
+          @include lg {
+            font-size: rem(16);
+          }
+
+          @include md {
+            font-size: rem(14);
+          }
+
+          &:hover {
+            color: $gc;
+          }
+        }
+      }
+    }
+  }
+
+  &__social {
+    @include xs {
+      margin-bottom: rem(30);
+    }
+
+    ul {
+      li {
+        height: rem(43);
+        width: rem(43);
+        display: inline-block;
+        margin-left: rem(3);
+
+        a {
+          background-color: #4c515c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          transition: $tr;
+
+          &:hover {
+            background-color: #81c2fa;
+          }
+
+          i {
+            color: $wc;
+          }
+        }
+      }
+    }
+  }
 }

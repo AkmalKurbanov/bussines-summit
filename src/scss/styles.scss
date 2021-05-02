@@ -7,13 +7,15 @@
 // @import "../../node_modules/--/--/";
 
 @import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import "../../node_modules/wow.js/css/libs/animate.css";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
 // FontAwesome
 
 // @import "../assets/icons/fontello/--/--/";
-// @import "../assets/icons/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css";
+@import "../assets/icons/fontawesome5/web-fonts-with-css/css/fontawesome-all.min.css";
 
 //---------------------------------------------
 
@@ -32,5 +34,13 @@
 // Компоненты
 
 @import "components/base";
+@import "components/m-menu";
 @import "components/header";
+@import "components/hero";
+@import "components/overview";
+@import "components/vision";
+@import "components/img-block";
+@import "components/direction";
+@import "components/stands";
+@import "components/contacts";
 @import "components/footer";

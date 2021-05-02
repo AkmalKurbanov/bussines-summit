@@ -1,1 +1,36 @@
-header 1
+header.header
+  .hamburger
+    span
+    span
+    span
+    span
+    span
+    span
+  .header__wrap
+    .header__col 
+      .header__logo
+        a(href="#")
+          img(src="assets/img/logo.png", alt="")
+    .header__col       
+      .header__nav.nav 
+        nav 
+          ul 
+            mixin nav(href,item)
+              li
+                a(href=href)=item 
+            +nav('#overview','Обзор')           
+            +nav('#vision','Видение')           
+            +nav('#opportunity','Возможность')           
+            +nav('#goal','Цель')           
+            +nav('#mission','Миссия')           
+            +nav('#benefit','Польза')           
+            +nav('#direction','Направления')           
+            +nav('#contacs','Контакты')           
+      .header__contacts
+        a(href="tel:81002344567") 
+          .header__icon-wrap
+            .header__icon 
+              i.fas.fa-phone
+          .header__title Свяжитесь с нами
+          |8-100-234-45-67 
+        

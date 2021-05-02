@@ -1,0 +1,75 @@
+.vision {
+  background-color: $wc;
+
+  &__wrap {
+    position: relative;
+    padding: rem(15) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: linear-gradient(135deg, #302f9e 0%, #302f9e 20%, rgb(122, 81, 205) 82%, rgb(122, 81, 205) 100%);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    max-width: calc(100% - 30px);
+    margin: auto;
+    background-color: $wc;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: rem(85) 0;
+
+    @include lg {
+      padding: rem(65) 0;
+    }
+
+    @include md {
+      padding: rem(45);
+      flex-direction: column-reverse;
+    }
+
+    @include sm {
+      padding: rem(25);
+    }
+    @include xs {
+      padding: rem(20);
+    }
+  }
+
+  &__col {
+    flex-basis: 50%;
+
+    &:first-child {
+      padding-left: rem(85);
+
+      @include lg {
+        padding-left: rem(65);
+      }
+
+      @include md {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: -10%;
+      background-color: $wc;
+
+      @include lg {
+        margin-right: -5%;
+      }
+
+      @include md {
+        margin-right: 0;
+      }
+    }
+  }
+}

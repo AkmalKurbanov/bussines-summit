@@ -4,8 +4,10 @@
   "description": "Project",
   "main": "index.js",
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "jquery": "^3.4.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

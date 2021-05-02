@@ -1,0 +1,144 @@
+.overview {
+  background-color: $sc;
+
+  &__wrap {
+    display: flex;
+
+    @include lg {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    flex-basis: 40%;
+
+    @include lg {
+      order: 1;
+      flex-basis: 100%;
+    }
+
+    &:first-child {
+      flex-basis: 60%;
+      margin-right: rem(50);
+
+      @include lg {
+        order: 2;
+        flex-basis: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    margin-bottom: rem(20);
+    background-color: $wc;
+    padding: rem(25) rem(15) rem(25) rem(30);
+    flex-basis: 48%;
+    display: flex;
+    align-items: center;
+
+    @include md {
+      padding: rem(20) rem(10) rem(20) rem(25);
+    }
+
+    @include sm {
+      padding: rem(15) rem(5) rem(15) rem(20);
+    }
+
+    @include xs {
+      flex-basis: 100%;
+      max-width: rem(400);
+      margin: auto;
+      margin-bottom: rem(20);
+      padding: rem(10) rem(5) rem(10) rem(15);
+    }
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #80c2fa;
+      color: $wc;
+      min-width: rem(50);
+      height: rem(50);
+      margin-right: rem(15);
+      font-size: rem(16);
+
+      @include md {
+        min-width: rem(40);
+        height: rem(40);
+        font-size: rem(14);
+      }
+
+      @include sm {
+        min-width: rem(35);
+        height: rem(35);
+        font-size: rem(13);
+      }
+    }
+
+    p {
+      font-size: rem(20);
+
+      @include md {
+        font-size: rem(17);
+      }
+
+      @include sm {
+        font-size: rem(15);
+      }
+    }
+
+    &--modifiet {
+      p {
+        font-size: rem(13);
+      }
+    }
+  }
+
+  &--modifiet {
+    background-color: $wc;
+
+    .overview__item {
+      padding: rem(15) rem(15) rem(20) rem(25);
+      background-color: $sc;
+
+      @include md {
+        padding: rem(20) rem(10) rem(20) rem(25);
+      }
+
+      @include sm {
+        padding: rem(15) rem(5) rem(15) rem(20);
+      }
+
+      @include xs {
+        padding: rem(10) rem(5) rem(10) rem(15);
+      }
+
+
+      p {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  &--direction {
+    .overview__item {
+      flex-basis: 32%;
+
+      @include lg {
+        flex-basis: 48%;
+      }
+      @include xs {
+        flex-basis: 100%;
+      }
+    }
+
+  }
+}

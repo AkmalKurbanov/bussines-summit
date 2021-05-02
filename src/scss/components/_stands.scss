@@ -1,0 +1,73 @@
+.stands {
+  background-color: $sc;
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex-basis: 32%;
+    margin-bottom: rem(30);
+
+    a {
+      display: inline-flex;
+      position: relative;
+
+      &:hover {
+        .stands__title {
+          opacity: 1;
+          transform: translate(-50%, -100%);
+        }
+
+        &:before {
+          background-color: rgba($bc, .4);
+        }
+      }
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($bc, .5);
+        transition: $tr;
+      }
+    }
+
+    &--standart {
+      flex-basis: 48%;
+
+      &:nth-child(2n) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: $tr;
+    color: $wc;
+    font-size: rem(20);
+    font-weight: 700;
+
+    @include md {
+      font-size: rem(18);
+    }
+
+    @include sm {
+      font-size: rem(16);
+    }
+    @include xs {
+      font-size: rem(13);
+    }
+  }
+}

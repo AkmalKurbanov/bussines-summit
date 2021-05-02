@@ -5,7 +5,7 @@ const fonter = require('gulp-fonter'); // преобразует шрифт otf 
 
 
 module.exports = function fonts() {
-  return gulp.src('./src/assets/fonts/**/*.ttf')
+  return gulp.src('/src/assets/fonts/**/*.ttf')
     .pipe(ttf2woff())
     .pipe(gulp.dest('./dist/assets/fonts/')),
     gulp.src('./src/assets/fonts/**/*.ttf')
