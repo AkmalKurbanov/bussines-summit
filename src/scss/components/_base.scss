@@ -207,12 +207,15 @@ p {
       @include lg {
         width: rem(45);
       }
+
       @include md {
         width: rem(40);
       }
+
       @include sm {
         width: rem(35);
       }
+
       @include xs {
         width: rem(30);
       }
@@ -451,3 +454,46 @@ p {
 }
 
 // modal window end
+
+.icon-wrap {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    .icon-wrap__icon {
+      background-color: $mc;
+
+      i {
+        color: $wc;
+      }
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#5e4ac5, .2);
+    border-radius: 100%;
+    right: -5px;
+    top: -5px;
+  }
+
+  &__icon {
+    position: relative;
+    width: rem(30);
+    height: rem(30);
+    border: rem(2) solid $mc;
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: $tr;
+
+    i {
+      color: $mc;
+      font-size: rem(18);
+    }
+  }
+}

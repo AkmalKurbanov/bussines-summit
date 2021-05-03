@@ -135,7 +135,7 @@
       &:hover {
         color: $mc;
 
-        .header__icon {
+        .icon-wrap__icon {
           background-color: $mc;
 
           i {
@@ -146,43 +146,17 @@
     }
   }
 
-  &__icon-wrap {
+  .icon-wrap {
     position: absolute;
     transform: scaleX(-1);
     left: rem(20);
     top: 0;
-
-
     &:before {
-      position: absolute;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-color: rgba(#5e4ac5, .2);
-      border-radius: 100%;
       left: -5px;
-      top: -5px;
-      z-index: -1;
-    }
-
-  }
-
-  &__icon {
-    position: relative;
-    width: rem(30);
-    height: rem(30);
-    border: rem(2) solid $mc;
-    border-radius: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: $tr;
-
-    i {
-      color: $mc;
-      font-size: rem(18);
     }
   }
+
+
 
   &__title {
     font-size: rem(20);
